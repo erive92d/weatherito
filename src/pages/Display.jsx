@@ -1,4 +1,4 @@
-import { currentWeather } from "../utils/API.JS";
+import { currentWeather } from "../utils/api.js";
 import { useEffect, useState } from "react";
 export default function DisplayWeather({ weather }) {
     console.log(weather)
