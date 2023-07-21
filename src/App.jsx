@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import './App.css'
-import { currentWeather } from './utils/API.JS'
+import currentWeather from './utils/API.JS/currentWeather'
 import Navigation from './components/Navigation'
 import DisplayWeather from './pages/Display'
 import { grabRecent, recentSearch } from './utils/localStorage'
@@ -29,7 +29,7 @@ function App() {
 
     try {
       const response = await currentWeather(input)
-      console.log(response)
+      // console.log(response)
       if (response.cod === "404") {
         alert("City not found")
         return
