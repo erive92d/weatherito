@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react'
 import './App.css'
-// import { currentWeather } from './utils/api.js'
 import Navigation from './components/Navigation'
 import DisplayWeather from './pages/Display'
 import { grabRecent, recentSearch } from './utils/localStorage'
