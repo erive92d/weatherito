@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import './App.css'
+import currentWeather from './utils/api.JS'
 import Navigation from './components/Navigation'
 import DisplayWeather from './pages/Display'
 import { grabRecent, recentSearch } from './utils/localStorage'
@@ -14,12 +15,8 @@ function App() {
     const recent = async () => {
       const initial = grabRecent() || "San Francisco, CA"
       if (!weather) {
-        const API_KEY = import.meta.env.VITE_APIKEY
-
-        const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${initial},US&appid=${API_KEY}&units=imperial`)
-        // const response = await currentWeather(initial)
-        const data = await response.json()
-        setWeather(data)
+        const response = await currentWeather(initial)
+        setWeather(response)
       }
     }
 
