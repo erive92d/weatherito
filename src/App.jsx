@@ -1,6 +1,4 @@
 import { useEffect, useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 import { currentWeather } from './utils/API.JS'
 import Navigation from './components/Navigation'
@@ -8,6 +6,7 @@ import DisplayWeather from './pages/Display'
 import { grabRecent, recentSearch } from './utils/localStorage'
 
 function App() {
+
   const [weather, setWeather] = useState(null)
   const [input, setInput] = useState("")
 

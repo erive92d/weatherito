@@ -4,6 +4,7 @@ export default function DisplayWeather({ weather }) {
     console.log(weather)
     if (!weather) return <h1>Loading..</h1>
 
+
     const climate = () => {
         const climDetails = weather.weather[0].main
         // console.log(climDetails)
@@ -30,7 +31,7 @@ export default function DisplayWeather({ weather }) {
 
 
     return (
-        <div className="bg-gray-200 p-2 space-y-20 bg-blue-400">
+        <div className=" p-2 space-y-20 bg-blue-400">
             <div className="flex flex-col items-center text-white font-thin p-2">
                 <div className="">
                     <h1 className="text-3xl">{weather?.name}</h1>
