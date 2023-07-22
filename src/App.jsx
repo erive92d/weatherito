@@ -3,6 +3,8 @@ import './App.css'
 import Navigation from './components/Navigation'
 import DisplayWeather from './pages/Display'
 import { grabRecent, recentSearch } from './utils/localStorage'
+import SaveLocation from './components/SaveLocation'
+
 
 export async function currentWeather(city) {
   const API_KEY = import.meta.env.VITE_APIKEY
@@ -43,8 +45,6 @@ function App() {
       }
 
       recentSearch(input)
-
-
       setWeather(response)
     } catch (error) {
       console.log(error)
@@ -67,7 +67,7 @@ function App() {
 
   return (
     <div className='min-h-screen relative flex flex-col bg-blue-400' >
-
+      <SaveLocation name={weather?.name} />
       <DisplayWeather weather={weather} />
       <Navigation handleSearch={handleSearch} handleInput={handleInput} />
 
