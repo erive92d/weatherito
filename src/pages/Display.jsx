@@ -32,7 +32,7 @@ export default function DisplayWeather({ weather }) {
 
     return (
         <div className=" p-2 space-y-10 bg-blue-400">
-
+        <SaveLocation name={weather?.name} />
             <div className="flex flex-col items-center text-white font-thin p-2">
 
                 <div className="">
